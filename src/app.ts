@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import router from "./router";
-
+import routerAdmin from "./controllers/restaurant.controller"
 
 /** 1-ENTRANCE  **/
 const app = express();
@@ -21,5 +21,6 @@ app.set("view engine", "ejs");
 
 
 /** 4-ROUTERS  **/
-app.use("/", router);
+app.use("/admin", routerAdmin); //BSSR: EJS
+app.use("/", router);// SPA single page a: REACT
 export default app;
