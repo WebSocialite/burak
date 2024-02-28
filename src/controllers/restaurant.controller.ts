@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import { T } from "../libs/types/common";
-import MemberService from "src/models/Member.service";
+import MemberService from "../models/Member.service";
 
-const restaurantController: any = {};
+const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
     try {
         res.send("Home Page");

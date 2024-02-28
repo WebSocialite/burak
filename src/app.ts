@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import router from "./router";
-import routerAdmin from "./controllers/restaurant.controller"
+import routerAdmin from "../src/routerAdmin";
 
 /** 1-ENTRANCE  **/
 const app = express();
