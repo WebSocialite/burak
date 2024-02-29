@@ -1,7 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
-import memberController from 'src/controllers/member.controller';
-import { MemberStatus } from 'src/libs/member.enum';
-import { MemberType } from 'src/libs/member.enum';
+import memberController from '../controllers/member.controller';
+import { MemberStatus } from '../libs/member.enum';
+import { MemberType } from '../libs/member.enum';
 
 
 const memberSchema = new Schema({
