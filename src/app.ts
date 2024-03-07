@@ -33,9 +33,9 @@ app.use(
   },
   store: store,
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
     })
-)
+);
 
 
 

@@ -18,15 +18,20 @@ css => SNAKE case
         //    TASK L
         //    TASK K
         //    TASK J
-        //    TASK I
-        function getDigits(inputString: string) {
-            const digitsArray = inputString.match(/\d/g);
+      
+      
+      
+      
+      
+        // //    TASK I
+        // function getDigits(inputString: string) {
+        //     const digitsArray = inputString.match(/\d/g);
             
-            return digitsArray ? digitsArray.join('') : '';
-        }
-        const inputString = "m14i1t";
-        const result = getDigits(inputString);
-        console.log(result);
+        //     return digitsArray ? digitsArray.join('') : '';
+        // }
+        // const inputString = "m14i1t";
+        // const result = getDigits(inputString);
+        // console.log(result);
 
 
 
