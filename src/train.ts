@@ -18,6 +18,22 @@ css => SNAKE case
         //    TASK L
         //    TASK K
         //    TASK J
+        function findLongestWord(str: string) {
+                const words = str.split(' ');
+                let longestWord = '';
+                let maxLength = 0;
+       
+                for (const word of words) {
+                 if (word.length > maxLength) {
+            longestWord = word;
+         maxLength = word.length;
+                    }
+                }
+              return longestWord;
+            }
+            const inputString = "I come from Uzbekistan";
+            const longestWord = findLongestWord(inputString);
+            console.log(longestWord);
       
       
       
