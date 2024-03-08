@@ -6,6 +6,11 @@ class => PASCAL case
 folder => KEBAB case
 css => SNAKE case
 */
+/* 
+   *** COOCKIES ***
+   request join, har bitta requestga qo'shiladi
+
+*/
 
 
 
