@@ -22,23 +22,42 @@ css => SNAKE case
         //    TASK M
         //    TASK L
         //    TASK K
-        //    TASK J
-        function findLongestWord(str: string) {
-                const words = str.split(' ');
-                let longestWord = '';
-                let maxLength = 0;
-       
-                for (const word of words) {
-                 if (word.length > maxLength) {
-            longestWord = word;
-         maxLength = word.length;
+        function countVowels(string: string) {
+                const vowels = "aeiouAEIOU";
+                let count = 0;
+                for (let char of string) {
+                    if (vowels.includes(char)) {
+                        count++;
                     }
                 }
-              return longestWord;
+                return count;
             }
-            const inputString = "I come from Uzbekistan";
-            const longestWord = findLongestWord(inputString);
-            console.log(longestWord);
+           
+            let result = countVowels("string");
+            console.log(result); 
+
+
+
+
+
+
+        //    TASK J
+        // function findLongestWord(str: string) {
+        //         const words = str.split(' ');
+        //         let longestWord = '';
+        //         let maxLength = 0;
+       
+        //         for (const word of words) {
+        //          if (word.length > maxLength) {
+        //     longestWord = word;
+        //  maxLength = word.length;
+        //             }
+        //         }
+        //       return longestWord;
+        //     }
+        //     const inputString = "I come from Uzbekistan";
+        //     const longestWord = findLongestWord(inputString);
+        //     console.log(longestWord);
       
       
       
