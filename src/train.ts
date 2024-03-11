@@ -11,6 +11,11 @@ css => SNAKE case
    request join, har bitta requestga qo'shiladi
 
 */
+// (1)  VALIDATIONS: 4 TYPES
+// 1. FrontEND validation 
+// 2. Backend Validation
+// 3. Database Validation
+// 4 Pipe validation
 
 
 
