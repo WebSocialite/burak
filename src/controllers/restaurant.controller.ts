@@ -68,8 +68,6 @@ restaurantController.processLogin = async (req: AdminRequest, res: Response) => 
       req.session.save(function() {
         res.send(result);
       });
-        
-        res.send(result);
 
     } catch (err) {
         console.log("Error, processLogin:", err);
