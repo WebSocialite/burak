@@ -26,20 +26,37 @@ css => SNAKE case
         //    TASK N
         //    TASK M
         //    TASK L
-        //    TASK K
-        function countVowels(string: string) {
-                const vowels = "aeiouAEIOU";
-                let count = 0;
-                for (let char of string) {
-                    if (vowels.includes(char)) {
-                        count++;
-                    }
-                }
-                return count;
-            }
+
+        function reverseSentence(sentence: string) {
+            const words = sentence.split(' ');
+            const reversedWords = words.map((word: string) => word.split('').reverse().join(''));
+            const reversedSentence = reversedWords.join(' ');
+        
+            return reversedSentence;
+        }
+       
+        const inputSentence = "we like coding!";
+        const reversedResult = reverseSentence(inputSentence);
+        console.log(reversedResult);
+
+
+
+
+
+        // //    TASK K
+        // function countVowels(string: string) {
+        //         const vowels = "aeiouAEIOU";
+        //         let count = 0;
+        //         for (let char of string) {
+        //             if (vowels.includes(char)) {
+        //                 count++;
+        //             }
+        //         }
+        //         return count;
+        //     }
            
-            let result = countVowels("string");
-            console.log(result); 
+        //     let result = countVowels("string");
+        //     console.log(result); 
 
 
 
