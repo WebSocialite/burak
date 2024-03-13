@@ -3,6 +3,7 @@ const routerAdmin = express.Router();
 import restaurantController from './controllers/restaurant.controller';
 import productController from './controllers/product.controller';
 import makeUploader from './libs/utils/uploader';
+ './libs/utils/uploader';
 
 // RESTAURANT
 routerAdmin.get("/", restaurantController.goHome);
