@@ -54,8 +54,6 @@ restaurantController.processSignup = async (req: AdminRequest, res: Response) =>
       req.session.save(function() {
         res.redirect("/admin/product/all");
       });
-
-      res.send(result);
     } catch (err) {
       console.log("Error, processSignup", err);
       const message = err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
