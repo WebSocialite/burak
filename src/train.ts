@@ -25,19 +25,37 @@ css => SNAKE case
         //    TASK O
         //    TASK N
         //    TASK M
+        function getSquareNumbers(numbers: number[]) {
+            const result = [];
+
+            for (const number of numbers) {
+                const square = number ** 2;
+                const smallerNumber = Math.min(number, square);
+                const largerNumber = Math.max(number, square);
+        
+                  result.push({ number: smallerNumber, square: largerNumber });
+            }
+            return result;
+        }
+        
+
+        const inputArray = [1, 2, 3];
+        const squareNumbers = getSquareNumbers(inputArray);
+        console.log(squareNumbers);
+
         //    TASK L
 
-        function reverseSentence(sentence: string) {
-            const words = sentence.split(' ');
-            const reversedWords = words.map((word: string) => word.split('').reverse().join(''));
-            const reversedSentence = reversedWords.join(' ');
+        // function reverseSentence(sentence: string) {
+        //     const words = sentence.split(' ');
+        //     const reversedWords = words.map((word: string) => word.split('').reverse().join(''));
+        //     const reversedSentence = reversedWords.join(' ');
         
-            return reversedSentence;
-        }
+        //     return reversedSentence;
+        // }
        
-        const inputSentence = "we like coding!";
-        const reversedResult = reverseSentence(inputSentence);
-        console.log(reversedResult);
+        // const inputSentence = "we like coding!";
+        // const reversedResult = reverseSentence(inputSentence);
+        // console.log(reversedResult);
 
 
 
