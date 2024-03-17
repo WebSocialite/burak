@@ -3,7 +3,7 @@ import Errors, { HttpCode, Message } from "../libs/Errors";
 import { T } from "../libs/types/common";
 import { Request, Response } from "express";
 import { AdminRequest } from "../libs/types/member";
-import ProductService from "../models/product.service";
+import ProductService from "../models/Product.service";
 import { ProductInput } from "../libs/types/product";
 
 const productService = new ProductService();

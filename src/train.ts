@@ -24,24 +24,40 @@ css => SNAKE case
         //    TASK P
         //    TASK O
         //    TASK N
-        //    TASK M
-        function getSquareNumbers(numbers: number[]) {
-            const result = [];
 
-            for (const number of numbers) {
-                const square = number ** 2;
-                const smallerNumber = Math.min(number, square);
-                const largerNumber = Math.max(number, square);
+        function palindromeCheck(str: string) {
+          
+            const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
         
-                  result.push({ number: smallerNumber, square: largerNumber });
-            }
-            return result;
+            
+            return cleanedStr === cleanedStr.split('').reverse().join('');
         }
         
+        
+        console.log(palindromeCheck("dad"));
+        console.log(palindromeCheck("son")); 
 
-        const inputArray = [1, 2, 3];
-        const squareNumbers = getSquareNumbers(inputArray);
-        console.log(squareNumbers);
+
+
+
+        //    TASK M
+        // function getSquareNumbers(numbers: number[]) {
+        //     const result = [];
+
+        //     for (const number of numbers) {
+        //         const square = number ** 2;
+        //         const smallerNumber = Math.min(number, square);
+        //         const largerNumber = Math.max(number, square);
+        
+        //           result.push({ number: smallerNumber, square: largerNumber });
+        //     }
+        //     return result;
+        // }
+        
+
+        // const inputArray = [1, 2, 3];
+        // const squareNumbers = getSquareNumbers(inputArray);
+        // console.log(squareNumbers);
 
         //    TASK L
 
