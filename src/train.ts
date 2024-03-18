@@ -23,19 +23,39 @@ css => SNAKE case
 
         //    TASK P
         //    TASK O
-        //    TASK N
-
-        function palindromeCheck(str: string) {
-          
-            const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+        function calculateSumOfNumbers(arr: string | any[]) {
+            let sum = 0;
         
-            
-            return cleanedStr === cleanedStr.split('').reverse().join('');
+            for (let i = 0; i < arr.length; i++) {
+                if (typeof arr[i] === 'number' && !isNaN(arr[i])) {
+                    sum += arr[i];
+                }
+            }
+        
+            return sum;
         }
         
+        console.log(calculateSumOfNumbers([10, "10", {number: 10}, true, 35])); 
+
+
+
+
+
+
+
+        //    TASK N
+
+        // function palindromeCheck(str: string) {
+          
+        //     const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
         
-        console.log(palindromeCheck("dad"));
-        console.log(palindromeCheck("son")); 
+            
+        //     return cleanedStr === cleanedStr.split('').reverse().join('');
+        // }
+        
+        
+        // console.log(palindromeCheck("dad"));
+        // console.log(palindromeCheck("son")); 
 
 
 
