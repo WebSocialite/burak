@@ -10,7 +10,7 @@ $(function () {
             console.log("uploadFile:", uploadFile);
             const fileType = uploadFile["type"];
             const validImageType = ["image/jpg", "image/jpeg", "image/png"];
-            if(validImageType.includes(fileType)) {
+            if(!validImageType.includes(fileType)) {
                 alert("please insert only jpg, jpeg and png!")
             } else {
                 if (uploadFile) {
