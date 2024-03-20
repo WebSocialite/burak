@@ -22,20 +22,27 @@ css => SNAKE case
 
 
         //    TASK P
-        //    TASK O
-        function calculateSumOfNumbers(arr: string | any[]) {
-            let sum = 0;
-        
-            for (let i = 0; i < arr.length; i++) {
-                if (typeof arr[i] === 'number' && !isNaN(arr[i])) {
-                    sum += arr[i];
-                }
-            }
-        
-            return sum;
+        function objectToArray(obj: { [s: string]: unknown; } | ArrayLike<unknown>) {
+            return Object.entries(obj);
         }
         
-        console.log(calculateSumOfNumbers([10, "10", {number: 10}, true, 35])); 
+        // Test the function
+        console.log(objectToArray({ a: 10, b: 20 })); 
+
+        //    TASK O
+        // function calculateSumOfNumbers(arr: string | any[]) {
+        //     let sum = 0;
+        
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (typeof arr[i] === 'number' && !isNaN(arr[i])) {
+        //             sum += arr[i];
+        //         }
+        //     }
+        
+        //     return sum;
+        // }
+        
+        // console.log(calculateSumOfNumbers([10, "10", {number: 10}, true, 35])); 
 
 
 
