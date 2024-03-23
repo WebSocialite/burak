@@ -19,15 +19,35 @@ css => SNAKE case
 
 
 
+   // TASK Q
 
 
-        //    TASK P
-        function objectToArray(obj: { [s: string]: unknown; } | ArrayLike<unknown>) {
-            return Object.entries(obj);
-        }
+
+
+// task Q
+
+function hasProperty(obj: { name?: string; model?: string; hasOwnProperty?: any; }, property: string) {
+    return obj.hasOwnProperty(property);
+}
+
+// Test cases
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // Output: true
+console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));  // Output: false
+
+
+
+
+
+
+
+
+        // //    TASK P
+        // function objectToArray(obj: { [s: string]: unknown; } | ArrayLike<unknown>) {
+        //     return Object.entries(obj);
+        // }
         
-        // Test the function
-        console.log(objectToArray({ a: 10, b: 20 })); 
+        // // Test the function
+        // console.log(objectToArray({ a: 10, b: 20 })); 
 
         //    TASK O
         // function calculateSumOfNumbers(arr: string | any[]) {

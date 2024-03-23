@@ -12,7 +12,7 @@ $(function () {
             if(!validImageType.includes(fileType)) {
                 alert("please insert only jpg, jpeg and png!")
             } else {
-                if (uploadFile) {
+                if(uploadFile) {
                     console.log(URL.createObjectURL(uploadFile));
                     $(".upload-img-frame")
                     .attr("src", URL.createObjectURL(uploadFile))
