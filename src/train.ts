@@ -21,7 +21,17 @@ css => SNAKE case
 
    // TASK Q
 
+   function calculate(str: string) {
+      const numbers = str.split('+');
+      
+      const sum = numbers.reduce((acc: number, num: string) => acc + parseInt(num), 0);
+      
+      return sum;
+  }
 
+  console.log(calculate("1+3")); 
+  console.log(calculate("10+20")); 
+  
 
 
 // task Q
