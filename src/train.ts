@@ -19,6 +19,19 @@ css => SNAKE case
 
 
 
+
+
+    // TASK R
+    function missingNumber(nums: any[]) {
+      const n = nums.length + 1;const sumWithoutMissing = (n * (n + 1)) / 2; 
+      const actualSum = nums.reduce((acc, num) => acc + num, 0); return sumWithoutMissing - actualSum;
+  }
+  
+  console.log(missingNumber([3, 0, 1])); 
+  console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])); 
+  
+
+
    // TASK Q
 
    function calculate(str: string) {
