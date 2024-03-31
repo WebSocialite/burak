@@ -20,19 +20,32 @@ css => SNAKE case
 
 
 
+                        // TASK T
+       function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+        const mergedArray = [...arr1, ...arr2]; 
+        mergedArray.sort((a, b) => a - b); 
+         return mergedArray;
+          }
+                        
+  
+      console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+
+
+
+
 
     // TASK S
-    const missingNumber = (arr: number[]) => {
-        const sortedArr = arr.sort((a, b) => a - b);
-        for (let i = 0; i < sortedArr.length; i++) {
-          if (sortedArr[i] !== sortedArr[i + 1] - 1) {
-            return sortedArr[i] + 1;
-          }
-        }
-      };
+    // const missingNumber = (arr: number[]) => {
+    //     const sortedArr = arr.sort((a, b) => a - b);
+    //     for (let i = 0; i < sortedArr.length; i++) {
+    //       if (sortedArr[i] !== sortedArr[i + 1] - 1) {
+    //         return sortedArr[i] + 1;
+    //       }
+    //     }
+    //   };
       
-      const result = missingNumber([3, 0, 1]);
-      console.log("result => ", result);
+    //   const result = missingNumber([3, 0, 1]);
+    //   console.log("result => ", result);
 //    // TASK R
 
 //    function calculate(str: string) {
