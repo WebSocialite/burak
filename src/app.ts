@@ -51,5 +51,5 @@ app.set("view engine", "ejs");
 
 /** 4-ROUTERS  **/
 app.use("/admin", routerAdmin); //BSSR: EJS
-app.use("/", router);// SPA single page a: REACT
+app.use("/", router);// SPA single page application: REACT
 export default app;
