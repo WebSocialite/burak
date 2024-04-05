@@ -17,8 +17,39 @@ css => SNAKE case
 // 3. Database Validation
 // 4 Pipe validation
 
+                        // TASK V
+                        function countChars(str: string): { [key: string]: number } {
+    const charCount: { [key: string]: number } = {};
+    for (const char of str) {
+        if (charCount[char]) {
+            charCount[char]++;
+        } else {
+            charCount[char] = 1;
+        }
+      }
+    return charCount;
+}
+const result = countChars("SALOM");
+console.log(result);
 
 
+
+
+                        // TASK U
+
+
+
+    function sumOdds(num: number): number {
+      let count: number = 0;
+  for (let i = 0; i <= num; i++) {
+           if (i % 2 !== 0) {
+     count++;
+       }
+      }
+       return count;
+    }
+  console.log(sumOdds(9)); 
+  console.log(sumOdds(11)); 
 
                         // TASK T
        function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
