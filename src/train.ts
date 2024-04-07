@@ -23,10 +23,10 @@ css => SNAKE case
                         // TASK W 
   function chunkArray(arr: any[], size: number): any[][] {
   const chunks: any[][] = [];
-  let index = 0;
-  while (index < arr.length) {
-  chunks.push(arr.slice(index, index + size));
-  index += size;
+  let i = 0;
+  while (i < arr.length) {
+  chunks.push(arr.slice(i, i + size));
+  i += size;
   }
                       
   return chunks;
