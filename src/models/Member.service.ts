@@ -17,7 +17,7 @@ class MemberService {
      public async getRestaurant(): Promise<Member> {
         const result = await this.memberModel
         .findOne({memberType: MemberType.RESTAURANT })
-        .lean()
+        .lean()  //bu orqali database da data ni ozgartira olarkanmiz
         .exec();
         result.target = "TEST";
         if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
