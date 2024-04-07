@@ -17,6 +17,26 @@ css => SNAKE case
 // 3. Database Validation
 // 4 Pipe validation
 
+
+
+
+                        // TASK W 
+  function chunkArray(arr: any[], size: number): any[][] {
+  const chunks: any[][] = [];
+  let index = 0;
+  while (index < arr.length) {
+  chunks.push(arr.slice(index, index + size));
+  index += size;
+  }
+                      
+  return chunks;
+  }
+                      
+const result = chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
+  console.log(result); 
+
+
+
                         // TASK V
                         function countChars(str: string): { [key: string]: number } {
     const charCount: { [key: string]: number } = {};
@@ -29,8 +49,8 @@ css => SNAKE case
       }
     return charCount;
 }
-const result = countChars("SALOM");
-console.log(result);
+const result1 = countChars("SALOM");
+console.log(result1);
 
 
 
