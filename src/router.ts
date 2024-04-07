@@ -21,6 +21,8 @@ router.post(
     uploader("members").single("memberImage"),
     memberController.updateMember
 );
+// .get but REST API ni methodi hisoblanadi
+router.get("/member/top-users", memberController.getTopUsers);
 
 /** PRODUCT */
 
