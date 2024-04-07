@@ -21,6 +21,7 @@ const store = new MongoDBStore({
 /** 1-ENTRANCE  **/
 const app = express();
 app.use(express.static(path.join(__dirname, "public"))); //jamiyki userlar beradigon requestlarga "public" access beruvchi vosita (code)
+app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cookieParser());
