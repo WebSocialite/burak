@@ -17,7 +17,31 @@ css => SNAKE case
 // 3. Database Validation
 // 4 Pipe validation
 
+                      // TASK X 
 
+function countOccurrences(obj: any, str: string): number {
+    let count = 0;
+
+    function traverseObject(obj: any) {
+        for (const key in obj) {
+           if (key === str) {
+                count++;
+            }
+           
+            if (typeof obj[key] === 'object') {
+                traverseObject(obj[key]);
+            }
+        }
+    }
+
+    traverseObject(obj);
+
+    return count;
+}
+
+const obj = { model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } };
+const result2 = countOccurrences(obj, 'model');
+console.log(result2); 
 
 
                         // TASK W 
