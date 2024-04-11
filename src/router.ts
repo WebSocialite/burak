@@ -3,6 +3,7 @@ const router = express.Router();
 import memberController from './controllers/member.controller';
 import { verify } from 'jsonwebtoken';
 import uploader from "./libs/utils/uploader";
+import productController from './controllers/product.controller';
 
 
 /** MEBMER */
@@ -26,7 +27,7 @@ router.post(
 router.get("/member/top-users", memberController.getTopUsers);
 
 /** PRODUCT */
-
+router.get("/product/all", productController.getProducts);
 
 /** ORDER */
 
