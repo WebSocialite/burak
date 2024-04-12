@@ -1,5 +1,4 @@
 import { HttpCode } from "../libs/Errors";
-import productModel from "../schema/product.model";
 import { Product, ProductInput, ProductInquiry, ProductUpdateInput } from "../libs/types/product";
 import { Message } from "../libs/Errors";
 import Errors from "../libs/Errors";
@@ -10,6 +9,7 @@ import { ObjectId } from "mongoose";
 import ViewService from "./View.service";
 import { ViewGroup } from "../libs/enums/view.enum";
 import { ViewInput } from "../libs/types/view";
+import productModel from "../schema/Product.model";
 
 class ProductService {
    private readonly productModel;
@@ -34,7 +34,7 @@ public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
    const sort: T = 
    inquiry.order === "productPrice" //agar inquiry teng bo'lsa
       ? {[inquiry.order]: 1}  // arzonidan boshlab yuqoriga kotaril degan mantiq berdik
-      : {[inquiry.order]: -1}; // eng ohiridan qoshilgandan pasga qarab ketish mantiqgi
+      : {[inquiry.order]: -1}; // eng ohiridan qoshilgan vaqtida pasga qarab ketish mantiqgi
 
       const result = await this.productModel.aggregate([
          {$match: match},
@@ -57,8 +57,10 @@ public async getProduct(
       _id: productId, 
       productStatus: ProductStatus.PROCESS,
    }).exec();
+   console.log("result:", result);
+   
    if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
-
+  
    // TODO : IF authenticated users=> first -> view log creation
    if(memberId) {
       //CHECK existence 
@@ -76,7 +78,7 @@ public async getProduct(
       if(!existView) {
          await this.viewService.insertMemberView(input);
         //Increase Counts
-         const result2 = await this.productModel
+         result = await this.productModel
          .findByIdAndUpdate( productId,
           { $inc: { productViews: +1 } },
           { new: true }
