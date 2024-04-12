@@ -16,6 +16,18 @@ css => SNAKE case
 // 2. Backend Validation
 // 3. Database Validation
 // 4 Pipe validation
+                      // TASK Y
+function findIntersection(arr1: any[], arr2: any[]): any[] {
+
+    return arr1.filter(item => arr2.includes(item));
+}
+
+const result3 = findIntersection([1, 2, 3], [3, 2, 0]);
+console.log(result3);
+
+
+
+
 
                       // TASK X 
 

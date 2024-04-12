@@ -21,11 +21,11 @@ const store = new MongoDBStore({
 /** 1-ENTRANCE  **/
 const app = express();
 app.use(express.static(path.join(__dirname, "public"))); //jamiyki userlar beradigon requestlarga "public" access beruvchi vosita (code)
-app.use("/uploads", express.static("./uploads"));
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
-app.use(cookieParser());
-app.use(morgan(MORGAN_FORMAT));
+app.use("/uploads", express.static("./uploads")); //upload folderga "ACCESS" beryapmiz
+app.use(express.urlencoded({extended: true})); //html dan <form> data requestni qabul qilishga ruxsat beryapmizq  
+app.use(express.json()); //kirib keylayotgan datani object ga aylantirayapti
+app.use(cookieParser());  // yasalgan token larimizni Browserni Session qismiga Access tokenlarni beryapti
+app.use(morgan(MORGAN_FORMAT));  // qancha vaqt ichida req res bo'layotganini ko'rsatar ekan
 
 
 /** 2- SESSIONS  **/
@@ -33,7 +33,7 @@ app.use(
     session({
         secret: String(process.env.SESSION_SECRET),
   cookie: {
-    maxAge: 1000 * 3600 * 6     // 6h
+    maxAge: 1000 * 3600 * 6     // 6h  ichida kirilmasa avtomat ravishda LogOut boladi
   },
   store: store,
   resave: true,
@@ -43,13 +43,13 @@ app.use(
 
 app.use(function(req, res, next) {
   const sessionInstance = req.session as T;
-  res.locals.member = sessionInstance.member;
+  res.locals.member = sessionInstance.member;  // local variable hosil qilyapmiz browserimizda va buni biz home.ejs da ishlatdik
   next();
 })
 
 /** 3-VIEWS  **/
-app.set('views', path.join(__dirname, 'views'));
-app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));  //this line sets the directory where your application's views (or templates) are located
+app.set("view engine", "ejs"); // embedded javascript should be rendering in view enginve file 
 
 
 /** 4-ROUTERS  **/
