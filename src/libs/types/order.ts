@@ -38,3 +38,8 @@ export interface OrderInquiry {
     orderStatus: OrderStatus
 
 }
+export interface OrderUpdateInput {
+    orderId(orderId: any): unknown;
+    order: string;
+    orderStatus: OrderStatus;
+}

@@ -29,14 +29,15 @@ public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
    if(inquiry.productCollection) 
      match.productCollection = inquiry.productCollection;
    if(inquiry.search) {
-      match.productName = {$regex: new RegExp(inquiry.search, "i") };
+      match.productName = {$regex: new RegExp(inquiry.search, "i") };  // letter katta yoki kichligiga qarama degan logic ekan
    }
    const sort: T = 
    inquiry.order === "productPrice" //agar inquiry teng bo'lsa
       ? {[inquiry.order]: 1}  // arzonidan boshlab yuqoriga kotaril degan mantiq berdik
       : {[inquiry.order]: -1}; // eng ohiridan qoshilgan vaqtida pasga qarab ketish mantiqgi
 
-      const result = await this.productModel.aggregate([
+      const result = await this.productModel
+      .aggregate([
          {$match: match},
          {$sort: sort},
          {$skip: (inquiry.page * 1 - 1)* inquiry.limit }, // nechtadur malumotni skip qlish
