@@ -29,6 +29,8 @@ public async createOrder(
        const amount = input.reduce((accomulator: number, item: OrderItemInput) => {
         return accomulator + item.itemPrice * item.itemQuantity;
        }, 0);
+       console.log("input=>", input);
+       
        const delivery = amount < 100 ? 5 : 0;  // 100 dan kam bolgan orderga delivery cost bor degan logic 
        console.log("value:", amount, delivery );
        try {
@@ -105,7 +107,8 @@ public async createOrder(
               orderId = shapeIntoMongooseObjectId(input.orderId),
               orderStatus = input.orderStatus;
 
-            const result = await this.orderModel.findOneAndUpdate(
+            const result = await this.orderModel
+            .findOneAndUpdate(
                 {
                     memberId: memberId,
                     _id: orderId,
@@ -114,11 +117,12 @@ public async createOrder(
                 { new: true }
             )
             .exec();
-
+               
+                
         if(!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
-
+                
         if(orderStatus === OrderStatus.PROCESS) {
-            await this.memberService.addUserPoint(member, 1); 
+           await this.memberService.addUserPoint(member, 1); 
         }
         return result;
         }

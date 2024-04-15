@@ -3,7 +3,7 @@ import mongoose, { Schema } from 'mongoose';
 
 const orderItemSchema = new Schema({
 
-    ItemQuantity: {
+    itemQuantity: {
         type: Number,
         required: true,
     },
