@@ -41,7 +41,6 @@ console.log(result4);
 
 
 
-
                       // TASK Y
 function findIntersection(arr1: any[], arr2: any[]): any[] {
 
