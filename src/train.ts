@@ -16,6 +16,32 @@ css => SNAKE case
 // 2. Backend Validation
 // 3. Database Validation
 // 4 Pipe validation
+
+
+
+//**                   TASK Z            */
+
+function sumEvens(nums: number[]): number {
+    let sum = 0;
+
+    for (const num of nums) {
+        if (num % 2 === 0) {
+            sum += num;
+        }
+    }
+
+    return sum;
+}
+
+const result4 = sumEvens([1, 2, 3]);
+console.log(result4);
+
+
+
+
+
+
+
                       // TASK Y
 function findIntersection(arr1: any[], arr2: any[]): any[] {
 
