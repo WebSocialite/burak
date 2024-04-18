@@ -1,7 +1,7 @@
 // BU YERDA BIZ DATABASE VALIDATION ni Hosil qilyapmiz
 
 import mongoose, { Schema } from 'mongoose';
-import { ProductCollection, 
+import {ProductCollection, 
     ProductSize, 
     ProductStatus,
     ProductVolume }

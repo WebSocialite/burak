@@ -20,16 +20,29 @@
 
 
 
-/**                           ZA TASK */
-interface Person {
-    age: number;
+
+
+
+/**                              ZB TASK */
+
+function randomBetween(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function sortByAge(people: Person[]): Person[] {
-    return people.sort((a, b) => a.age - b.age);
-}
-const people: Person[] = [{ age: 23 }, { age: 21 }, { age: 13 }],
- sortedPeople = sortByAge(people);
-console.log(sortedPeople); 
+
+
+const randomNumber = randomBetween(30, 50);
+console.log(randomNumber); 
+
+// /**                           ZA TASK */
+// interface Person {
+//     age: number;
+// }
+// function sortByAge(people: Person[]): Person[] {
+//     return people.sort((a, b) => a.age - b.age);
+// }
+// const people: Person[] = [{ age: 23 }, { age: 21 }, { age: 13 }],
+//  sortedPeople = sortByAge(people);
+// console.log(sortedPeople); 
 
 
 
