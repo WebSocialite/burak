@@ -20,10 +20,20 @@
 
 
 
+/**                              ZG TASK   */
+/**                              ZF TASK   */
+/**                              ZE TASK   */
+/**                              ZD TASK   */
+/**                              ZC TASK   */
+function celsiusToFahrenheit(celsius: number): number {
+    return (celsius * 9/5) + 32;
+}
+
+const fahrenheitValue = celsiusToFahrenheit(0);
+console.log("fahrenheitvalue:", fahrenheitValue); 
 
 
-
-/**                              ZB TASK */
+/**                              ZB TASK   */
 
 function randomBetween(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
