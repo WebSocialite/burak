@@ -25,6 +25,17 @@
 /**                              ZE TASK   */
 /**                              ZD TASK   */
 
+function changeNumberInArray(indexToFind: number, arr: number[], 
+    replacement: number): number[] {
+    const index = arr.indexOf(indexToFind);
+    if (index !== -1) {
+        arr[index] = replacement;
+    }
+    return arr;
+}
+
+const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
+console.log("result:", result); 
 
 /**                              ZC TASK   */
 function celsiusToFahrenheit(celsius: number): number {
