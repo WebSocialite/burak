@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import path from "path";
 import router from "./router";
@@ -24,6 +25,11 @@ app.use(express.static(path.join(__dirname, "public"))); //jamiyki userlar berad
 app.use("/uploads", express.static("./uploads")); //upload folderga "ACCESS" beryapmiz
 app.use(express.urlencoded({extended: true})); //html dan <form> data requestni qabul qilishga ruxsat beryapmizq  
 app.use(express.json()); //kirib keylayotgan datani object ga aylantirayapti
+app.use(
+  cors({                 // DOMAIN (browser) dan lyuboy requestda access (ruhsat) beradi
+  credentials: true, 
+  origin: true,})
+);
 app.use(cookieParser());  // yasalgan token larimizni Browserni Session qismiga Access tokenlarni beryapti
 app.use(morgan(MORGAN_FORMAT));  // qancha vaqt ichida req res bo'layotganini ko'rsatar ekan
 
