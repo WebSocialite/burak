@@ -23,38 +23,47 @@
 /**                              ZG TASK   */
 /**                              ZF TASK   */
 /**                              ZE TASK   */
-/**                              ZD TASK   */
 
-function changeNumberInArray(indexToFind: number, arr: number[], 
-    replacement: number): number[] {
-    const index = arr.indexOf(indexToFind);
-    if (index !== -1) {
-        arr[index] = replacement;
-    }
-    return arr;
+function removeDuplicate(str: string): string {
+    return [...new Set(str)].join('');
 }
 
-const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
+// Example usage:
+const result = removeDuplicate('stringg');
 console.log("result:", result); 
 
-/**                              ZC TASK   */
-function celsiusToFahrenheit(celsius: number): number {
-    return (celsius * 9/5) + 32;
-}
+/**                              ZD TASK   */
 
-const fahrenheitValue = celsiusToFahrenheit(0);
-console.log("fahrenheitvalue:", fahrenheitValue); 
+// function changeNumberInArray(indexToFind: number, arr: number[], 
+//     replacement: number): number[] {
+//     const index = arr.indexOf(indexToFind);
+//     if (index !== -1) {
+//         arr[index] = replacement;
+//     }
+//     return arr;
+// }
+
+// const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
+// console.log("result:", result); 
+
+// /**                              ZC TASK   */
+// function celsiusToFahrenheit(celsius: number): number {
+//     return (celsius * 9/5) + 32;
+// }
+
+// const fahrenheitValue = celsiusToFahrenheit(0);
+// console.log("fahrenheitvalue:", fahrenheitValue); 
 
 
-/**                              ZB TASK   */
+// /**                              ZB TASK   */
 
-function randomBetween(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+// function randomBetween(min: number, max: number): number {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
 
 
-const randomNumber = randomBetween(30, 50);
-console.log(randomNumber); 
+// const randomNumber = randomBetween(30, 50);
+// console.log(randomNumber); 
 
 // /**                           ZA TASK */
 // interface Person {
