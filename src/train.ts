@@ -22,15 +22,28 @@
 
 /**                              ZG TASK   */
 /**                              ZF TASK   */
-/**                              ZE TASK   */
-
-function removeDuplicate(str: string): string {
-    return [...new Set(str)].join('');
+function capitalizeWords(str: string): string {
+    return str.split(' ').map(word => {
+        if (word.length <= 2) {
+            return word.toLowerCase();
+        } else {
+            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        }
+    }).join(' ');
 }
 
-// Example usage:
-const result = removeDuplicate('stringg');
-console.log("result:", result); 
+const result = capitalizeWords('name should be a string');
+console.log("result=>", result);
+
+/**                              ZE TASK   */
+
+// function removeDuplicate(str: string): string {
+//     return [...new Set(str)].join('');
+// }
+
+// // Example usage:
+// const result = removeDuplicate('stringg');
+// console.log("result:", result); 
 
 /**                              ZD TASK   */
 
