@@ -20,20 +20,43 @@
 
 
 
+/**                              ZN TASK   */
+/**                              ZM TASK   */
+/**                              ZL TASK   */
+/**                              ZK TASK   */
+/**                              ZJ TASK   */
+/**                              ZI TASK   */
+/**                              ZH TASK   */
 /**                              ZG TASK   */
-/**                              ZF TASK   */
-function capitalizeWords(str: string): string {
-    return str.split(' ').map(word => {
-        if (word.length <= 2) {
-            return word.toLowerCase();
-        } else {
-            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-        }
-    }).join(' ');
+
+function stringToSnakeCase(str: string): string {
+    const words = str.split(' ');
+
+    // Joining the words in the array using underscores ('_')
+    const snakeCaseString = words.join('_');
+
+    // Convert the result to lowercase
+    return snakeCaseString.toLowerCase();
 }
 
-const result = capitalizeWords('name should be a string');
-console.log("result=>", result);
+const result = stringToSnakeCase('name should be a string');
+console.log(result);
+
+
+
+/**                              ZF TASK   */
+// function capitalizeWords(str: string): string {
+//     return str.split(' ').map(word => {
+//         if (word.length <= 2) {
+//             return word.toLowerCase();
+//         } else {
+//             return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+//         }
+//     }).join(' ');
+// }
+
+// const result = capitalizeWords('name should be a string');
+// console.log("result=>", result);
 
 /**                              ZE TASK   */
 
