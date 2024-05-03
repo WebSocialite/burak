@@ -27,20 +27,37 @@
 /**                              ZJ TASK   */
 /**                              ZI TASK   */
 /**                              ZH TASK   */
+function findDisappearedNumbers(nums: number[]): number[] {
+    const numSet = new Set(nums);
+    const maxNum = Math.max(...nums);
+    const disappearedNumbers: number[] = [];
+    
+    for (let i = 1; i <= maxNum; i++) {
+        if (!numSet.has(i)) {
+            disappearedNumbers.push(i);
+        }
+    }
+    
+    return disappearedNumbers;
+}
+const result = findDisappearedNumbers([1, 3, 4, 7]);
+console.log("result:", result); 
+
+
 /**                              ZG TASK   */
 
-function stringToSnakeCase(str: string): string {
-    const words = str.split(' ');
+// function stringToSnakeCase(str: string): string {
+//     const words = str.split(' ');
 
-    // Joining the words in the array using underscores ('_')
-    const snakeCaseString = words.join('_');
+//     // Joining the words in the array using underscores ('_')
+//     const snakeCaseString = words.join('_');
 
-    // Convert the result to lowercase
-    return snakeCaseString.toLowerCase();
-}
+//     // Convert the result to lowercase
+//     return snakeCaseString.toLowerCase();
+// }
 
-const result = stringToSnakeCase('name should be a string');
-console.log(result);
+// const result = stringToSnakeCase('name should be a string');
+// console.log(result);
 
 
 
