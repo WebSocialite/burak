@@ -26,22 +26,37 @@
 /**                              ZK TASK   */
 /**                              ZJ TASK   */
 /**                              ZI TASK   */
-/**                              ZH TASK   */
-function findDisappearedNumbers(nums: number[]): number[] {
-    const numSet = new Set(nums);
-    const maxNum = Math.max(...nums);
-    const disappearedNumbers: number[] = [];
-    
-    for (let i = 1; i <= maxNum; i++) {
-        if (!numSet.has(i)) {
-            disappearedNumbers.push(i);
-        }
-    }
-    
-    return disappearedNumbers;
+
+function delayHelloWorld(): Promise<string> {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Hello World");
+        }, 3000); // 3 seconds delay
+    });
 }
-const result = findDisappearedNumbers([1, 3, 4, 7]);
-console.log("result:", result); 
+
+// Example usage:
+delayHelloWorld().then((result) => {
+    console.log("result:", result); 
+});
+
+
+/**                              ZH TASK   */
+// function findDisappearedNumbers(nums: number[]): number[] {
+//     const numSet = new Set(nums);
+//     const maxNum = Math.max(...nums);
+//     const disappearedNumbers: number[] = [];
+    
+//     for (let i = 1; i <= maxNum; i++) {
+//         if (!numSet.has(i)) {
+//             disappearedNumbers.push(i);
+//         }
+//     }
+    
+//     return disappearedNumbers;
+// }
+// const result = findDisappearedNumbers([1, 3, 4, 7]);
+// console.log("result:", result); 
 
 
 /**                              ZG TASK   */
