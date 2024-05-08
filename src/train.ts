@@ -25,20 +25,35 @@
 /**                              ZL TASK   */
 /**                              ZK TASK   */
 /**                              ZJ TASK   */
-/**                              ZI TASK   */
-
-function delayHelloWorld(): Promise<string> {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve("Hello World");
-        }, 3000); // 3 seconds delay
-    });
+function reduceNestedArray(arr: (number | any[])[]): number {
+    let sum = 0;
+    for (const element of arr) {
+        if (Array.isArray(element)) {
+            sum += reduceNestedArray(element);
+        } else if (typeof element === 'number') {
+            sum += element;
+        }
+    }
+    return sum;
 }
 
-// Example usage:
-delayHelloWorld().then((result) => {
-    console.log("result:", result); 
-});
+const result = reduceNestedArray([1, [1, 2, [4]]]);
+console.log("result=>", result);
+
+/**                              ZI TASK   */
+
+// function delayHelloWorld(): Promise<string> {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Hello World");
+//         }, 3000); // 3 seconds delay
+//     });
+// }
+
+// // Example usage:
+// delayHelloWorld().then((result) => {
+//     console.log("result:", result); 
+// });
 
 
 /**                              ZH TASK   */
