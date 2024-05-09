@@ -24,21 +24,35 @@
 /**                              ZM TASK   */
 /**                              ZL TASK   */
 /**                              ZK TASK   */
-/**                              ZJ TASK   */
-function reduceNestedArray(arr: (number | any[])[]): number {
-    let sum = 0;
-    for (const element of arr) {
-        if (Array.isArray(element)) {
-            sum += reduceNestedArray(element);
-        } else if (typeof element === 'number') {
-            sum += element;
-        }
-    }
-    return sum;
+function printNumbers(): void {
+    let count = 1;
+    const intervalId = setInterval(() => {
+        console.log(count);
+        count++;
+        if (count > 5) {
+            clearInterval(intervalId); 
+          }
+    }, 1000); 
 }
 
-const result = reduceNestedArray([1, [1, 2, [4]]]);
-console.log("result=>", result);
+printNumbers();
+
+
+/**                              ZJ TASK   */
+// function reduceNestedArray(arr: (number | any[])[]): number {
+//     let sum = 0;
+//     for (const element of arr) {
+//         if (Array.isArray(element)) {
+//             sum += reduceNestedArray(element);
+//         } else if (typeof element === 'number') {
+//             sum += element;
+//         }
+//     }
+//     return sum;
+// }
+
+// const result = reduceNestedArray([1, [1, 2, [4]]]);
+// console.log("result=>", result);
 
 /**                              ZI TASK   */
 
