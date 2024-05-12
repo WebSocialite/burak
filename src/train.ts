@@ -23,19 +23,26 @@
 /**                              ZN TASK   */
 /**                              ZM TASK   */
 /**                              ZL TASK   */
-/**                              ZK TASK   */
-function printNumbers(): void {
-    let count = 1;
-    const intervalId = setInterval(() => {
-        console.log(count);
-        count++;
-        if (count > 5) {
-            clearInterval(intervalId); 
-          }
-    }, 1000); 
-}
 
-printNumbers();
+function stringToKebab(str: string): string {
+    return str.toLowerCase().replace(/\s+/g, '-');
+  }
+  
+  console.log(stringToKebab("I love Kebab"));
+  
+/**                              ZK TASK   */
+// function printNumbers(): void {
+//     let count = 1;
+//     const intervalId = setInterval(() => {
+//         console.log(count);
+//         count++;
+//         if (count > 5) {
+//             clearInterval(intervalId); 
+//           }
+//     }, 1000); 
+// }
+
+// printNumbers();
 
 
 /**                              ZJ TASK   */
