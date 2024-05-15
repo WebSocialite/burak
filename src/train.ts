@@ -22,13 +22,24 @@
 
 /**                              ZN TASK   */
 /**                              ZM TASK   */
+
+function reverseInteger(num: number): number {
+  const reversedNum: number = parseInt(num.toString().split('').reverse().join(''));
+  return reversedNum;
+}
+
+const result: number = reverseInteger(123456789);
+console.log(result); 
+
+
+
 /**                              ZL TASK   */
 
-function stringToKebab(str: string): string {
-    return str.toLowerCase().replace(/\s+/g, '-');
-  }
+// function stringToKebab(str: string): string {
+//     return str.toLowerCase().replace(/\s+/g, '-');
+//   }
   
-  console.log(stringToKebab("I love Kebab"));
+//   console.log(stringToKebab("I love Kebab"));
   
 /**                              ZK TASK   */
 // function printNumbers(): void {
