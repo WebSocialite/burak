@@ -20,16 +20,38 @@
 
 
 
+/**                              ZZ TASK   */
+/**                              ZY TASK   */
+/**                              ZX TASK   */
+/**                              ZW TASK   */
+/**                              ZV TASK   */
+/**                              ZU TASK   */
+/**                              ZT TASK   */
+/**                              ZS TASK   */
+/**                              ZR TASK   */
+/**                              ZQ TASK   */
+/**                              ZP TASK   */
+/**                              ZO TASK   */
 /**                              ZN TASK   */
-/**                              ZM TASK   */
 
-function reverseInteger(num: number): number {
-  const reversedNum: number = parseInt(num.toString().split('').reverse().join(''));
-  return reversedNum;
+function rotateArray(arr: any[], index: number): any[] {
+  const rotatedArray = [...arr.slice(-index), ...arr.slice(0, -index)];
+  return rotatedArray;
 }
 
-const result: number = reverseInteger(123456789);
-console.log(result); 
+const rotated = rotateArray([1, 2, 3, 4, 5, 6], 3);
+console.log(rotated);
+
+
+// /**                              ZM TASK   */
+
+// function reverseInteger(num: number): number {
+//   const reversedNum: number = parseInt(num.toString().split('').reverse().join(''));
+//   return reversedNum;
+// }
+
+// const result: number = reverseInteger(123456789);
+// console.log(result); 
 
 
 
