@@ -32,15 +32,40 @@
 /**                              ZQ TASK   */
 /**                              ZP TASK   */
 /**                              ZO TASK   */
-/**                              ZN TASK   */
 
-function rotateArray(arr: any[], index: number): any[] {
-  const rotatedArray = [...arr.slice(-index), ...arr.slice(0, -index)];
-  return rotatedArray;
+
+function areParenthesesBalanced(s: string): boolean {
+  let count = 0;
+  
+  for (const char of s) {
+      if (char === '(') {
+          count++;
+      } else if (char === ')') {
+          count--;
+      }
+      if (count < 0) {
+          return false;
+      }
+  }
+  return count === 0;
 }
 
-const rotated = rotateArray([1, 2, 3, 4, 5, 6], 3);
-console.log(rotated);
+console.log(areParenthesesBalanced("number of (parentheses) in string()() in balance"));
+console.log(areParenthesesBalanced("(a(b)c)")); 
+console.log(areParenthesesBalanced("((a)b)c)")); 
+console.log(areParenthesesBalanced("((a)b(c)"));
+
+
+
+/**                              ZN TASK   */
+
+// function rotateArray(arr: any[], index: number): any[] {
+//   const rotatedArray = [...arr.slice(-index), ...arr.slice(0, -index)];
+//   return rotatedArray;
+// }
+
+// const rotated = rotateArray([1, 2, 3, 4, 5, 6], 3);
+// console.log(rotated);
 
 
 // /**                              ZM TASK   */
