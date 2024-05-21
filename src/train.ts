@@ -31,29 +31,53 @@
 /**                              ZR TASK   */
 /**                              ZQ TASK   */
 /**                              ZP TASK   */
+function majorityElement(arr: number[]) {
+    const countMap = new Map();
+  
+    for (const num of arr) {
+      countMap.set(num, (countMap.get(num) || 0) + 1);
+    }
+  
+    let majorityElement = null;
+    let maxCount = 0;
+  
+    for (const [num, count] of countMap) {
+      if (count > maxCount) {
+        maxCount = count;
+        majorityElement = num;
+      }
+    }
+  
+    return majorityElement;}
+
+  console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4])); 
+  
+
+
+
 /**                              ZO TASK   */
 
 
-function areParenthesesBalanced(s: string): boolean {
-  let count = 0;
+// function areParenthesesBalanced(s: string): boolean {
+//   let count = 0;
   
-  for (const char of s) {
-      if (char === '(') {
-          count++;
-      } else if (char === ')') {
-          count--;
-      }
-      if (count < 0) {
-          return false;
-      }
-  }
-  return count === 0;
-}
+//   for (const char of s) {
+//       if (char === '(') {
+//           count++;
+//       } else if (char === ')') {
+//           count--;
+//       }
+//       if (count < 0) {
+//           return false;
+//       }
+//   }
+//   return count === 0;
+// }
 
-console.log(areParenthesesBalanced("number of (parentheses) in string()() in balance"));
-console.log(areParenthesesBalanced("(a(b)c)")); 
-console.log(areParenthesesBalanced("((a)b)c)")); 
-console.log(areParenthesesBalanced("((a)b(c)"));
+// console.log(areParenthesesBalanced("number of (parentheses) in string()() in balance"));
+// console.log(areParenthesesBalanced("(a(b)c)")); 
+// console.log(areParenthesesBalanced("((a)b)c)")); 
+// console.log(areParenthesesBalanced("((a)b(c)"));
 
 
 
