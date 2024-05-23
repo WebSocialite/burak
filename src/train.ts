@@ -30,27 +30,53 @@
 /**                              ZS TASK   */
 /**                              ZR TASK   */
 /**                              ZQ TASK   */
-/**                              ZP TASK   */
-function majorityElement(arr: number[]) {
-    const countMap = new Map();
-  
-    for (const num of arr) {
-      countMap.set(num, (countMap.get(num) || 0) + 1);
-    }
-  
-    let majorityElement = null;
-    let maxCount = 0;
-  
-    for (const [num, count] of countMap) {
-      if (count > maxCount) {
-        maxCount = count;
-        majorityElement = num;
-      }
-    }
-  
-    return majorityElement;}
+function findDuplicates(arr: number[]): number[] {
+  const countMap: { [key: number]: number } = {};
+  const duplicates: number[] = [];
 
-  console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4])); 
+  for (const num of arr) {
+      if (countMap[num]) {
+          countMap[num]++;
+      } else {
+          countMap[num] = 1;
+      }
+  }
+  for (const num in countMap) {
+      if (countMap[num] > 1) {
+          duplicates.push(Number(num));
+      }
+  }
+
+  return duplicates;
+}
+
+const result = findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]);
+console.log(result);
+
+
+
+
+/**                              ZP TASK   */
+// function majorityElement(arr: number[]) {
+//     const countMap = new Map();
+  
+//     for (const num of arr) {
+//       countMap.set(num, (countMap.get(num) || 0) + 1);
+//     }
+  
+//     let majorityElement = null;
+//     let maxCount = 0;
+  
+//     for (const [num, count] of countMap) {
+//       if (count > maxCount) {
+//         maxCount = count;
+//         majorityElement = num;
+//       }
+//     }
+  
+//     return majorityElement;}
+
+//   console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4])); 
   
 
 
