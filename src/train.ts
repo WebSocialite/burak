@@ -29,29 +29,50 @@
 /**                              ZT TASK   */
 /**                              ZS TASK   */
 /**                              ZR TASK   */
-/**                              ZQ TASK   */
-function findDuplicates(arr: number[]): number[] {
-  const countMap: { [key: number]: number } = {};
-  const duplicates: number[] = [];
 
-  for (const num of arr) {
-      if (countMap[num]) {
-          countMap[num]++;
-      } else {
-          countMap[num] = 1;
-      }
-  }
-  for (const num in countMap) {
-      if (countMap[num] > 1) {
-          duplicates.push(Number(num));
-      }
-  }
+function countNumberAndLetters(input: string): { number: number; letter: number } {
+    let numberCount = 0;
+    let letterCount = 0;
 
-  return duplicates;
+    for (const char of input) {
+        if (/[0-9]/.test(char)) {
+            numberCount++;
+        } else if (/[a-zA-Z]/.test(char)) {
+            letterCount++;
+        }
+    }
+
+    return { number: numberCount, letter: letterCount };
 }
 
-const result = findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]);
+const result = countNumberAndLetters("string152%¥");
 console.log(result);
+
+
+
+/**                              ZQ TASK   */
+// function findDuplicates(arr: number[]): number[] {
+//   const countMap: { [key: number]: number } = {};
+//   const duplicates: number[] = [];
+
+//   for (const num of arr) {
+//       if (countMap[num]) {
+//           countMap[num]++;
+//       } else {
+//           countMap[num] = 1;
+//       }
+//   }
+//   for (const num in countMap) {
+//       if (countMap[num] > 1) {
+//           duplicates.push(Number(num));
+//       }
+//   }
+
+//   return duplicates;
+// }
+
+// const result = findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]);
+// console.log(result);
 
 
 
