@@ -27,18 +27,40 @@
 /**                              ZV TASK   */
 /**                              ZU TASK   */
 /**                              ZT TASK   */
+function firstUniqueCharIndex(str: string): number {
+    const charCount: { [key: string]: number } = {};
+
+    for (let char of str) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+
+    for (let i = 0; i < str.length; i++) {
+        if (charCount[str[i]] === 1) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+const result = firstUniqueCharIndex("stamp");
+console.log(result); 
+
+
+
+
 /**                              ZS TASK   */
 
 
-function singleNumber(arr: number[]): number | undefined {
-    if (arr.length === 0) {
-        return undefined; 
-    }
-    return arr[0];
-}
+// function singleNumber(arr: number[]): number | undefined {
+//     if (arr.length === 0) {
+//         return undefined; 
+//     }
+//     return arr[0];
+// }
 
-const result = singleNumber([4, 2, 1, 2, 1]);
-console.log(result); 
+// const result = singleNumber([4, 2, 1, 2, 1]);
+// console.log(result); 
 
 /**                              ZR TASK   */
 
