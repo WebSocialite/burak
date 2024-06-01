@@ -26,25 +26,45 @@
 /**                              ZW TASK   */
 /**                              ZV TASK   */
 /**                              ZU TASK   */
-/**                              ZT TASK   */
-function firstUniqueCharIndex(str: string): number {
-    const charCount: { [key: string]: number } = {};
 
-    for (let char of str) {
-        charCount[char] = (charCount[char] || 0) + 1;
+function sumOfUnique(arr: number[]): number {
+    const numCount: { [key: number]: number } = {};
+    for (let num of arr) {
+        numCount[num] = (numCount[num] || 0) + 1;
     }
 
-    for (let i = 0; i < str.length; i++) {
-        if (charCount[str[i]] === 1) {
-            return i;
+    let sum = 0;
+    for (let num in numCount) {
+        if (numCount[num] === 1) {
+            sum += parseInt(num);
         }
     }
 
-    return -1;
+    return sum;
 }
+const result = sumOfUnique([1, 2, 3, 2]);
+console.log(result);
 
-const result = firstUniqueCharIndex("stamp");
-console.log(result); 
+
+/**                              ZT TASK   */
+// function firstUniqueCharIndex(str: string): number {
+//     const charCount: { [key: string]: number } = {};
+
+//     for (let char of str) {
+//         charCount[char] = (charCount[char] || 0) + 1;
+//     }
+
+//     for (let i = 0; i < str.length; i++) {
+//         if (charCount[str[i]] === 1) {
+//             return i;
+//         }
+//     }
+
+//     return -1;
+// }
+
+// const result = firstUniqueCharIndex("stamp");
+// console.log(result); 
 
 
 
