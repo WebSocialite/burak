@@ -25,25 +25,47 @@
 /**                              ZX TASK   */
 /**                              ZW TASK   */
 /**                              ZV TASK   */
-/**                              ZU TASK   */
 
-function sumOfUnique(arr: number[]): number {
-    const numCount: { [key: number]: number } = {};
-    for (let num of arr) {
-        numCount[num] = (numCount[num] || 0) + 1;
-    }
+function moveZeroes(nums: number[]): number[] {
+    let nonZeroIndex = 0;
 
-    let sum = 0;
-    for (let num in numCount) {
-        if (numCount[num] === 1) {
-            sum += parseInt(num);
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== 0) {
+            nums[nonZeroIndex] = nums[i];
+            nonZeroIndex++;
         }
     }
+    for (let i = nonZeroIndex; i < nums.length; i++) {
+        nums[i] = 0;
+    }
 
-    return sum;
+    return nums;
 }
-const result = sumOfUnique([1, 2, 3, 2]);
-console.log(result);
+console.log(moveZeroes([0, 1, 0, 3, 12])); 
+
+
+
+
+
+/**                              ZU TASK   */
+
+// function sumOfUnique(arr: number[]): number {
+//     const numCount: { [key: number]: number } = {};
+//     for (let num of arr) {
+//         numCount[num] = (numCount[num] || 0) + 1;
+//     }
+
+//     let sum = 0;
+//     for (let num in numCount) {
+//         if (numCount[num] === 1) {
+//             sum += parseInt(num);
+//         }
+//     }
+
+//     return sum;
+// }
+// const result = sumOfUnique([1, 2, 3, 2]);
+// console.log(result);
 
 
 /**                              ZT TASK   */
