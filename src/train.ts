@@ -17,6 +17,16 @@
 // // 3. Database Validation
 // // 4 Pipe validation
 
+/** PM2 COMMANDS:
+ pm2 ls 
+ pm2 start dist/server.js --name=...
+ pm2 start "npm run start:prod" --name=...
+ pm2 stop id
+ pm2 delete id
+ pm2 restart id
+ pm2 monit 
+ pm2 kill
+ *  */ 
 
 
 
