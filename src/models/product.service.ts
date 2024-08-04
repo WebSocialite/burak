@@ -9,7 +9,7 @@ import { ObjectId } from "mongoose";
 import ViewService from "./View.service";
 import { ViewGroup } from "../libs/enums/view.enum";
 import { ViewInput } from "../libs/types/view";
-import productModel from "../schema/Product.model";
+import productModel from "../schema/product.model";
 
 class ProductService {
    private readonly productModel;

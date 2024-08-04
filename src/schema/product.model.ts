@@ -8,7 +8,7 @@ import {ProductCollection,
   from '../libs/enums/product.enum';
 
 
-const productSchema = new Schema(
+const productModel = new Schema(
     {
     productStatus: {
         type: String,
@@ -72,7 +72,7 @@ const productSchema = new Schema(
 );
 
 
-productSchema.index({productName: 1, productSize: 1, productVolume: 1 },
+productModel.index({productName: 1, productSize: 1, productVolume: 1 },
     { unique: true}
     );
-export default mongoose.model('Product', productSchema);
+export default mongoose.model('Product', productModel);
